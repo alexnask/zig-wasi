@@ -17,8 +17,6 @@ export fn buildIR(gpa: *std.mem.Allocator, directory: []const u8, file_name: []c
     const global_cache_preopen = preopens.find(PreopenType{ .Dir = ".cache" }) orelse return error.GlobalCacheDirectoryNotInPreopens;
     const source_directory_preopen = preopens.find(PreopenType{ .Dir = directory }) orelse return error.SourceDirectoryNotInPreopens;
 
-    const preopen = preopens.find(PreopenType{ .Dir = directory }) orelse return error.DirectoryNotInPreopens;
-
     var root_pkg = zig.Package{
         .root_src_directory = .{
             .path = null,

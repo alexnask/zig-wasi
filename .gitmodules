@@ -1,0 +1,3 @@
+[submodule "zig"]
+	path = zig
+	url = http://github.com/alexnask/zig.git
